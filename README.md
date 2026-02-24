@@ -4,10 +4,10 @@ A data science project that uses **network analysis** to study relationships amo
 
 ## Overview
 
-Active investing aims to beat the market's average returns. This notebook simulates portfolio construction by:
+Active investing aims to beat the market’s average returns. This notebook simulates portfolio construction by:
 
 1. Modeling the S&P 500 as a **correlation network** (stocks as nodes, correlations as edges).
-2. Using **graph theory** (e.g. Minimum Spanning Trees and centrality) to identify "central" and "peripheral" stocks.
+2. Using **graph theory** (e.g. Minimum Spanning Trees and centrality) to identify “central” and “peripheral” stocks.
 3. Building **central** and **peripheral** portfolios and comparing their performance to the S&P 500 over a hold-out year (2021).
 
 ## Goals
@@ -20,10 +20,10 @@ Active investing aims to beat the market's average returns. This notebook simula
 
 ## Data
 
-- **Training**: S&P 500 adjusted close prices, 2011–2020 — `snp500_price_data_2011_to_2020.csv` (in this repo).
-- **Evaluation**: S&P 500 prices for 2021 — `snp500_price_data_2021.csv` (in this repo).
-
-The notebook loads the CSV files from this repository. Missing values (e.g. from index rebalancing) are dropped rather than imputed.
+- **Training**: S&P 500 adjusted close prices, 2011–2020  
+  - `snp500_price_data_2011_to_2020.csv` (from GitHub).
+- **Evaluation**: S&P 500 prices for 2021  
+  - `snp500_price_data_2021.csv` (from GitHub).
 
 ## Notebook Structure
 
@@ -39,26 +39,14 @@ The notebook loads the CSV files from this repository. Missing values (e.g. from
 | **Selecting Stocks** | **Central portfolio**: top 10% by degree or betweenness. **Peripheral portfolio**: degree = 1 or betweenness = 0, then top 15 by average distance. |
 | **Performance Evaluation** | Simulate portfolio values for 2021; compare central portfolio, peripheral portfolio, and S&P 500. |
 
-## Dependencies
+<img width="2420" height="855" alt="image" src="https://github.com/user-attachments/assets/402afe52-7a91-4c08-83ea-a70162f92f72" />
 
-- **Python 3** (notebook was run in a Colab-like environment).
-- **Libraries**: `pandas`, `numpy`, `seaborn`, `networkx`, `matplotlib`.
-
-```bash
-pip install pandas numpy seaborn networkx matplotlib
-```
-
-## How to Run
-
-1. Clone this repo and open `network_analysis.ipynb` in Jupyter Notebook, JupyterLab, or Google Colab.
-2. The notebook loads data from this repository; ensure you have internet access if using the raw GitHub URLs, or place the CSV files in the same directory.
-3. Run all cells in order.
 
 ## Key Concepts
 
 - **Log returns**: Used for stationarity and stable variance in time series.
 - **Correlation distance**: \( d = \sqrt{2(1 - \rho)} \) to turn correlation into a distance for the MST.
-- **Minimum Spanning Tree (MST)**: Connects all stocks with minimal total distance, highlighting the main correlation "backbone."
+- **Minimum Spanning Tree (MST)**: Connects all stocks with minimal total distance, highlighting the main correlation “backbone.”
 - **Centrality**: Degree, closeness, betweenness, and eigenvector centrality identify influential (central) vs. marginal (peripheral) nodes in the stock network.
 
 ## Results (from the notebook)
@@ -67,7 +55,3 @@ pip install pandas numpy seaborn networkx matplotlib
 - **Central portfolio**: Stocks with highest degree/betweenness (and related centrality).
 - **Peripheral portfolio**: Stocks with degree 1 or betweenness 0, then the 15 farthest by average distance.
 - Performance is compared in 2021: central portfolio, peripheral portfolio, and S&P 500 (e.g. cumulative value or returns). The notebook includes the exact comparison and any outperformance metrics.
-
-## Repository
-
-[Network-Stock-Portfolio-Optimization](https://github.com/andresfelipe0711/Network-Stock-Portfolio-Optimization)
