@@ -2,6 +2,14 @@
 
 A data science project that uses **network analysis** to study relationships among S&P 500 stocks and build portfolios (central vs. peripheral) that are then evaluated against the S&P 500 index.
 
+## 🚀 Project Visualization
+
+Due to the rich visualizations and the extensive network analysis (16MB+), GitHub's native viewer may not render the entire notebook. For the best experience and to view all interactive plots and centrality graphs, please use the link below:
+
+> [!TIP]
+> **[View Full Notebook on NBViewer](https://nbviewer.org/github/andresfelipe0711/Network-Stock-Portfolio-Optimization/blob/main/network_analysis.ipynb)**
+
+---
 ## Overview
 
 Active investing aims to beat the market’s average returns. This notebook simulates portfolio construction by:
